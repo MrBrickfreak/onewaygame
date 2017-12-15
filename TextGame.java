@@ -2,10 +2,11 @@ import java.util.*;
 public class TextGame {
     public static void main(String[] args) {
 
-        //Homework by Henry ORlov
-        //IVSB12
-        //12.2017 
- 
+        /**Homework by Henry Orlov
+        *B12
+        *12,2017
+         **/
+
         Scanner rep = new Scanner(System.in);  //Scanner.
         String PlayerName;      //player nickname or name.
         String d1, d2, d3, d4;     //strings for decisions.
@@ -19,10 +20,13 @@ public class TextGame {
         line5 = "You punch him in a face, after he falls you start to beat cr*p out of him \nAfter 2 weeks you was awarded by medal of galactic honor from the hands by great emperor Palpatine \nSince then you live happy with name of great moff ";
         line6 = "After 64 years you died in glory at age of ";
         line7 = "*You just shot a lot of stormtroopers to get to the capsules, but rebel got serious injure.\nYou can run away alone or..."; // \n helps sparate text by lines.
-         /// 0 - status for exiting game.
-         /// 1 - status for beating the game.
-         /// 2 - status for denied access because of small age
-         /// 3 - easter egg ending
+
+           /**
+           *  0 - status for exiting game.
+           *   1 - status for beating the game.
+           *   2 - status for denied access because of small age.
+           *   3 - easter egg ending.
+           **/
 
         Timer timer1 = new Timer();         //Timer for line to accure.
         timer1.schedule(new TimerTask() {    //new timer task.
@@ -43,7 +47,7 @@ public class TextGame {
         Timer timer3 = new Timer(); //Timer for line to accure.
         timer3.schedule(new TimerTask() { //new time rask.
             public void run() {    // storage code that will run after time.
-                System.out.println("ONE WAY GAME! V0.1");
+                System.out.println("ONE WAY GAME! V0.2"); //NOW VERSION 0.2!!!11one
                 System.out.println("STAR WARS™ VERSION");
                 System.out.println("BY O.HENRY");
             }
@@ -119,7 +123,7 @@ public class TextGame {
 
             case "A":
                 System.out.println(line2); //println line2.
-                System.out.println("Do you want to restart game?TYPE Y/N");
+                System.out.println("Do you want to restart game?(TYPE Y/N)");
                 Scanner rep2 = new Scanner(System.in);  //new scanner rep2 holds answer.
                 String input2 = rep2.nextLine();
                 if (input2.toLowerCase().equals("y")) //it makes anything that you input in lower case
@@ -137,7 +141,7 @@ public class TextGame {
             default:    //if player type anything except A or B or exit then
                 System.out.println("You chosed to stand on place, and after some time you died, GG");
                 System.out.println(line2); //println line2
-                System.out.println("Do you want to restart game?TYPE Y/N");
+                System.out.println("Do you want to restart game?(TYPE Y/N)");
                 Scanner rep3 = new Scanner(System.in);
                String input3 = rep3.nextLine();
                 if (input3.toLowerCase().equals("y")) //it makes anything that you input in lower case
@@ -176,7 +180,7 @@ public class TextGame {
                         break;
                     default:    //if player type anything except A or B or exit then
                         System.out.println("You chosed to stand on place, and after some time you died, GG");
-                        System.out.println("Do you want to restart game?TYPE Y/N");
+                        System.out.println("Do you want to restart game?(TYPE Y/N)");
                         Scanner rep5 = new Scanner(System.in);
                         String input5 = rep5.nextLine();
                         if (input5.toLowerCase().equals("y")) //it makes anything that you input in lower case
@@ -196,7 +200,7 @@ public class TextGame {
                 switch (d3.toUpperCase()) { //makes anything that we input in upper case
                     default:
                         System.out.println("You chosed to stand on place, and after some time you died, GG");
-                        System.out.println("Do you want to restart game?TYPE Y/N");
+                        System.out.println("Do you want to restart game?(TYPE Y/N)");
                         Scanner rep6 = new Scanner(System.in);
                         String input6 = rep6.nextLine();
                         if (input6.toLowerCase().equals("y")) //it makes anything that you input in lower case
@@ -216,7 +220,7 @@ public class TextGame {
 
                     case "B":
                         System.out.println(" You both running in direction of capsules \n then sudennly more stormtroopers shows up and starting to shoot \n that guy just kills almost all of them but his ammo runs out and last trooper kills both of you *GAME OVER*");
-                        System.out.println("Do you want to restart game?TYPE Y/N");
+                        System.out.println("Do you want to restart game?(TYPE Y/N)");
                         Scanner rep8 = new Scanner(System.in);
                         String input8 = rep8.nextLine();
                         if (input8.toLowerCase().equals("y")) //it makes anything that you input in lower case
@@ -231,7 +235,7 @@ public class TextGame {
                         System.out.println(line6 + endage); //line6 and endage made from your inputed age + 64 years
                         System.out.println("YOU WON INSTRANGE WAY!!!!");
                         System.out.println("YOU GOT EASTER EGG ENDING!");
-                        System.out.println("Do you want to take another RUN?TYPE Y/N");
+                        System.out.println("Do you want to take another RUN?(TYPE Y/N)");
                         Scanner rep9 = new Scanner(System.in);
                         String input9 = rep9.nextLine();
                         if (input9.toLowerCase().equals("y")) //it makes anything that you input in lower case
@@ -250,7 +254,7 @@ public class TextGame {
                 switch (d4.toUpperCase()) { //makes anything that we input in upper case
                     default:
                         System.out.println("You chosed to stand on place, and after some time you died, GG");
-                        System.out.println("Do you want to restart game?TYPE Y/N");
+                        System.out.println("Do you want to restart game?(TYPE Y/N)");
                         Scanner rep10 = new Scanner(System.in);
                         String input10 = rep10.nextLine();
                         if (input10.toLowerCase().equals("y")) //it makes anything that you input in lower case
@@ -269,7 +273,7 @@ public class TextGame {
                         System.out.println("ONE WAY GAME 2");
                         System.out.println("COMING 2018");
                         System.out.println("PRE ORDER TO GET FREE HAT FOR TEAM FORTRESS 2!");
-                        System.out.println("Do you want to take another run?TYPE Y/N");
+                        System.out.println("Do you want to take another run?(TYPE Y/N)");
                         Scanner rep11 = new Scanner(System.in);
                         String input11 = rep11.nextLine();
                         if (input11.toLowerCase().equals("y")) //it makes anything that you input in lower case
@@ -280,7 +284,7 @@ public class TextGame {
                         }
                     case "B":
                         System.out.println("After you left him and escaped your escape pod EXPLODES because carma you cold hearted tin man!!!*GAME OVER*");
-                        System.out.println("Do you want to restart game?TYPE Y/N");
+                        System.out.println("Do you want to restart game?(TYPE Y/N)");
                         Scanner rep12 = new Scanner(System.in);
                         String input12 = rep12.nextLine();
                         if (input12.toLowerCase().equals("y")) //it makes anything that you input in lower case
