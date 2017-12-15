@@ -2,6 +2,10 @@ import java.util.*;
 public class TextGame {
     public static void main(String[] args) {
 
+        //Homework by Henry ORlov
+        //IVSB12
+        //12.2017 
+ 
         Scanner rep = new Scanner(System.in);  //Scanner.
         String PlayerName;      //player nickname or name.
         String d1, d2, d3, d4;     //strings for decisions.
