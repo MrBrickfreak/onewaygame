@@ -3,10 +3,10 @@ public class TextGame {
     public static void main(String[] args) {
         ///INFO OF GAME AND OBJECTS.
 
-        /*
-           Game that made as homework by Henry Orlov for java.
-           IVSB12.
-           12 month 2017.
+         /*
+         *Game that was made as homework by Henry Orlov for java classes.
+         *IVSB12.
+         *12 month 2017.
          */
 
         //ALL OBJECTS LISTED BELOW.
@@ -15,16 +15,16 @@ public class TextGame {
         String decision1, decision2, decision3, decision4;   //Strings for decisions.
         int age;           // int for age.
         int deathage;      // date of death = age + 64. that will be at easter egg ending.
-        String sline1, sline2, sline3, sline4, sline5, sline6, sline7, sline8, sline9, sline10, sline11, sline12, sline13, sline14, sline15, sline16, sline17;  //lines for "system" messages.
-        String eline1, eline2, eline3, eline4, eline5, eline6, eline7, eline8, eline9, eline10, eline11, eline12, eline13, eline14, eline15, eline16;           //plot events lines.
-        String rline1, rline2, rline3, rline4, rline5, rline6;    //lines for rebel.
+        String sline1, sline2, sline3, sline4, sline5, sline6, sline7, sline8, sline9, sline10, sline11, sline12, sline13, sline14, sline15, sline16, sline17;  //Lines for "system" messages.
+        String eline1, eline2, eline3, eline4, eline5, eline6, eline7, eline8, eline9, eline10, eline11, eline12, eline13, eline14, eline15, eline16;           //Plot events lines.
+        String rline1, rline2, rline3, rline4, rline5, rline6;    //Lines for rebel.
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         ///LINES LISTED BELOW.
-        //Lines for system messages.  // \n helps sparate text by lines.
+        //Lines for system messages. \n helps sparate text by lines.
         sline1 = "WELCOME TO EPIC, NEW, BRAINKILLING, BLOODTHRILLING";
         sline2 = "ULTIMATE";
-        sline3 = "ONE WAY GAME! V0.3\nSTAR WARS™ UNIVERSE\nBY O.HENRY";
+        sline3 = "ONE WAY GAME! V0.4\nSTAR WARS™ UNIVERSE\nBY O.HENRY";
         sline4 = "DISCLAIMER: Without any microtransactions!";
         sline5 = "Please enter your age, you know, PEGI n stuff...";
         sline6 = "You must enter a number";
@@ -79,12 +79,12 @@ public class TextGame {
         ///GAME STARTS HERE.
         //FIRST LINE.
         Timer timer1 = new Timer();            //Timer for line to accure.
-        timer1.schedule(new TimerTask() {      //new timer task.
-            public void run() {                // storage code that will run after time.
-                System.out.println(sline1);    // First line of whole game.
+        timer1.schedule(new TimerTask() {      //New timer task.
+            public void run() {                //Storage code that will run after time.
+                System.out.println(sline1);    //First line of whole game.
                               }
-        }, 2000);                       // after 2 seconds it will be executed.
-                                              //ALL NEXT LINES USE SAME SYSTEM.
+        }, 2000);                       //After 2 seconds it will be executed.
+                                              //ALL NEXT LINES USE SAME CODE.
         //SECOND LINE.
         Timer timer2 = new Timer();
         timer2.schedule(new TimerTask() {
@@ -120,36 +120,35 @@ public class TextGame {
 
         ///AGE PART.
         //LOOP FOR ACCURATE AGE INPUT.
-        while (true)
+        while (true)         //While TRUE it will execute if statement.
         {
-            if (!rep.hasNextInt()) {  //if scanner see negative from integer.
-                rep = new Scanner(System.in); //creating new values and deleteng old.
-                System.out.println(sline6);
-
-            } else {  //else
-                age = rep.nextInt();  //age input in int.
-                if (age >= 18) //if age is 18 or more.
+            if (!rep.hasNextInt()) {          //if scanner see negative from integer.
+                rep = new Scanner(System.in); //Creating new values and deleteng old.
+                System.out.println(sline6);   //Print line sline6.
+            } else {                   //else is not true then
+                age = rep.nextInt();   //age input in int.
+                if (age >= 18)         //if age is 18 or more then
                 {
-                    System.out.println(sline7); //proceed to game.
-                } else {
-                    System.out.println(sline7 + sline8);   //else player must GTFO.
-                    System.exit(2); //goodbye game. resstricted status
+                    System.out.println(sline7); //Proceed to game.
+                } else {                        //else...
+                    System.out.println(sline7 + sline8);   //Else player must GTFO.
+                    System.exit(2); //Goodbye game. Resstricted status.
                 }
                 break; //ends loop.
             }
         }
 
-        //DEATHAGE.
-        deathage = (age + 64); //counts age of death that will be showed at the easter egg ending.
+        //DEATH AGE.
+        deathage = (age + 64); //Counts the age of death that will be showed at the easter egg ending.
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         ///PLAYER NICKNAME OR NAME PART.
-        System.out.println(sline9); //line asking for player name.
-        PlayerName = rep.next();    // scanner rep for player name.
-        System.out.print(sline10);  //line for game start.
+        System.out.println(sline9); //Line asking for player name.
+        PlayerName = rep.next();    //Scanner rep for player name.
+        System.out.print(sline10);  //Line for game start.
 
         //FIRST LINE OF THE GAME.
-        Timer timer6 = new Timer();
+        Timer timer6 = new Timer(); //Same timers as in START PART.
         timer6.schedule(new TimerTask() {
             public void run() {
                 System.out.print(eline1);
@@ -157,12 +156,12 @@ public class TextGame {
         }, 2000);
 
         //SECOND LINE OF THE GAME.
-        Timer timer7 = new Timer();
+        Timer timer7 = new Timer();  //Same timers as in START PART.
         timer7.schedule(new TimerTask() {
             public void run() {
                 System.out.print(rline1);
                 System.out.print(rline2);
-                System.out.print(PlayerName);  //name in middle of conversation.
+                System.out.print(PlayerName);  //Name in middle of conversation.
                 System.out.println(rline3);
                 System.out.println(eline2);
                 System.out.println(sline11);
@@ -172,25 +171,25 @@ public class TextGame {
 
 
         ///FIRST DECISION PART.
-        decision1 = rep.next(); //scan next input as case for switch decision1.
+        decision1 = rep.next(); //Scan next input as case for switch decision1.
 
         //FIRST SWITCH.
-        switch (decision1.toUpperCase()) { //makes anything that we input in upper case.
+        switch (decision1.toUpperCase()) { //This line makes anything that you input in upper case, and comapres to "A or B or EXIT".
 
-            case "exit": // in case when typed exit.
-                System.exit(0); //status for exiting game.
+            case "EXIT":               //In case when typed exit.
+                System.exit(0); //Status for exiting game.
             break;
 
             case "A":
                 System.out.println(rline4); //println rline4.
                 System.out.println(sline12);
-                Scanner rep2 = new Scanner(System.in);  //new scanner rep2 holds answer.
+                Scanner rep2 = new Scanner(System.in);  //New scanner rep2 holds answer.
                 String input2 = rep2.nextLine();
-                if (input2.toLowerCase().equals("y")) //it makes anything that you input in lower case.
-                    main(new String[0]); // jumps at start.
+                if (input2.toLowerCase().equals("y")) //It makes anything that you input in lower case.
+                    main(new String[0]);              //Jumps at start of method.
                 else {
                     System.out.println(sline15);
-                    System.exit(0); //status for exiting game.
+                    System.exit(0);            //Status for exiting game.
                 }
                 break;
 
@@ -198,79 +197,82 @@ public class TextGame {
                 System.out.println(rline5 + eline3); //println rline4 + eline3.
                 break;
 
-            default:    //if player type anything except A or B or exit then.
+            default:    //By default if player type anything except A or B or exit then.
                 System.out.println(eline8);
                 System.out.println(rline3); //println rline3.
                 System.out.println(sline12);
                 Scanner rep3 = new Scanner(System.in);
                String input3 = rep3.nextLine();
-                if (input3.toLowerCase().equals("y")) //it makes anything that you input in lower case.
-                    main(new String[0]); // jumps at start.
+                if (input3.toLowerCase().equals("y")) //This line makes anything that you input in lower case, and compares it to "y".
+                    main(new String[0]);              // Jumps at start.
                 else {
                     System.out.println(sline12);
-                    System.exit(0); //status for exiting game.
+                    System.exit(0); //Status for exiting game.
                 }
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         ///SECOND DECISION PART.
                 System.out.println(eline9);
-                decision2 = rep.next(); //involves scanner for switch (decision2).
+                decision2 = rep.next(); //Involves scanner for switch (decision2).
         //SECOND SWITCH.
-                switch (decision2.toUpperCase()) { //makes anything that we input in upper case.
+                switch (decision2.toUpperCase()) { //This line makes anything that you input in upper case, and comapres to "A or B or EXIT".
 
-                    case "exit":
-                        System.exit(0); //status for exiting game.
+                    case "EXIT":
+                        System.exit(0); //Status for exiting game.
                         break;
+
                     case "A":
                         System.out.println(eline10);
                         System.out.println(sline13);
                         Scanner rep4 = new Scanner(System.in);
                         String input4 = rep4.nextLine();
-                        if (input4.toLowerCase().equals("y")) //it makes anything that you input in lower case.
-                            main(new String[0]); // jumps at start.
+                        if (input4.toLowerCase().equals("y")) //This line makes anything that you input in lower case, and comapres to "y".
+                            main(new String[0]);              //Jumps at start.
                         else {
                             System.out.println(sline13);
-                            System.exit(0); //status for exiting game.
+                            System.exit(0); //Status for exiting game.
                              }
+
                     case "B":
                         System.out.println(eline4 + rline6);
                         break;
-                    default:    //if player type anything except A or B or exit then.
+
+                    default:    //Default is made for case if player type anything except A or B or exit then.
                         System.out.println(eline8);
                         System.out.println(sline12);
-                        Scanner rep5 = new Scanner(System.in);
+                        Scanner rep5 = new Scanner(System.in); //Creates new scanner.
                         String input5 = rep5.nextLine();
-                        if (input5.toLowerCase().equals("y")) //it makes anything that you input in lower case.
-                            main(new String[0]); // jumps at start.
+                        if (input5.toLowerCase().equals("y")) //This line makes anything that you input in lower case, and comapres to "y".
+                            main(new String[0]);              //Jumps at start.
                         else {
                             System.out.println(sline13);
-                            System.exit(0); //status for bad ending.
+                            System.exit(0); //Status for bad ending.
                              }
-
-
                 }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         ///THIRD DECISION PART.
                 System.out.println(eline11);
-                decision3 = rep.next(); //involves scanner for switch(decision3).
+                decision3 = rep.next(); //Involves scanner for switch(decision3).
+
         //THIRD SWITCH.
-                switch (decision3.toUpperCase()) { //makes anything that we input in upper case.
+                switch (decision3.toUpperCase()) { //This line makes anything that you input in upper case, and comapres to "A or B or EXIT".
+
                     default:
                         System.out.println(eline8);
                         System.out.println(sline12);
                         Scanner rep6 = new Scanner(System.in);
                         String input6 = rep6.nextLine();
-                        if (input6.toLowerCase().equals("y")) //it makes anything that you input in lower case.
-                            main(new String[0]); // jumps at start.
+                        if (input6.toLowerCase().equals("y")) //This line makes anything that you input in lower case, and comapres to "y".
+                            main(new String[0]);              //Jumps at start.
                         else {
                             System.out.println(sline13);
-                            System.exit(0); //status for exiting game.
+                            System.exit(0); //Status for exiting game.
                              }
 
-                    case "exit":
-                        System.exit(0); //status for exiting game.
+                    case "EXIT":
+                        System.exit(0); //Status for exiting game.
                         break;
 
                     case "A":
@@ -282,50 +284,51 @@ public class TextGame {
                         System.out.println(sline12);
                         Scanner rep8 = new Scanner(System.in);
                         String input8 = rep8.nextLine();
-                        if (input8.toLowerCase().equals("y")) //it makes anything that you input in lower case.
-                            main(new String[0]); // jumps at start.
+                        if (input8.toLowerCase().equals("y")) //This line makes anything that you input in lower case, and comapres to "y".
+                            main(new String[0]);              //Jumps at start.
                         else {
                             System.out.println(sline13);
-                            System.exit(0); //status for exiting game.
+                            System.exit(0); //Status for exiting game.
                              }
 
                     case "C":
                         System.out.println(eline5 + PlayerName);
-                        System.out.println(eline6 + deathage); //line6 and deathage made from your inputed age + 64 years.
+                        System.out.println(eline6 + deathage); //eline6 and death age made from your inputed age + 64 years.
                         System.out.println(sline15);
                         System.out.println(sline12);
-                        Scanner rep9 = new Scanner(System.in);
+                        Scanner rep9 = new Scanner(System.in); //New scanner
                         String input9 = rep9.nextLine();
-                        if (input9.toLowerCase().equals("y")) //it makes anything that you input in lower case.
-                            main(new String[0]); // jumps at start.
+                        if (input9.toLowerCase().equals("y")) //This line makes anything that you input in lower case, and comapres to "y".
+                            main(new String[0]);              //Jumps at start.
                         else {
                             System.out.println(sline14);
-                            System.exit(3); //status for easter ending.
+                            System.exit(3); //Status for easter ending.
                              }
                 }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         ///FOURTH DECISION PART, AND ENDING.
-                System.out.println(eline7); //print line 7.
+                System.out.println(eline7); //Print line 7.
                 System.out.println(eline14);
-                decision4 = rep.next(); //involves scanner for switch(decision4).
+                decision4 = rep.next(); //Involves scanner for switch(decision4).
+
         //FOURTH SWICTH. LAST ONE.
-                switch (decision4.toUpperCase()) { //makes anything that we input in upper case.
+                switch (decision4.toUpperCase()) { //This line makes anything that you input in upper case, and comapres to "A or B or EXIT".
+
                     default:
                         System.out.println(eline8);
                         System.out.println(sline12);
                         Scanner rep10 = new Scanner(System.in);
                         String input10 = rep10.nextLine();
-                        if (input10.toLowerCase().equals("y")) //it makes anything that you input in lower case.
-                            main(new String[0]); // jumps at start
-
+                        if (input10.toLowerCase().equals("y")) //This line makes anything that you input in lower case, and comapres to "y".
+                            main(new String[0]);               //Jumps at start
                         else {
                             System.out.println(sline13);
-                            System.exit(0); //status for exiting game.
+                            System.exit(0); //Status for exiting game.
                              }
 
-                    case "exit":
-                        System.exit(0); //status for exiting game.
+                    case "EXIT":
+                        System.exit(0); //Status for exiting game.
                         break;
 
                     case "A":
@@ -334,8 +337,8 @@ public class TextGame {
                         System.out.println(sline12);
                         Scanner rep11 = new Scanner(System.in);
                         String input11 = rep11.nextLine();
-                        if (input11.toLowerCase().equals("y")) //it makes anything that you input in lower case.
-                            main(new String[0]); // jumps at start.
+                        if (input11.toLowerCase().equals("y")) //This line makes anything that you input in lower case, and comapres to "y".
+                            main(new String[0]);               //Jumps at start.
                         else {
                             System.out.println(sline17);
                             System.exit(1); //status for good ending.
@@ -346,9 +349,8 @@ public class TextGame {
                         System.out.println(sline12);
                         Scanner rep12 = new Scanner(System.in);
                         String input12 = rep12.nextLine();
-                        if (input12.toLowerCase().equals("y")) //it makes anything that you input in lower case.
-                            main(new String[0]); // jumps at start.
-
+                        if (input12.toLowerCase().equals("y")) //This line makes anything that you input in lower case, and comapres to "y".
+                            main(new String[0]);               //Jumps at start.
                         else {
                             System.out.println(sline13);
                             System.exit(0); //status for exiting game.
