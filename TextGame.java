@@ -1,212 +1,270 @@
 import java.util.*;
 public class TextGame {
     public static void main(String[] args) {
+        ///INFO OF GAME AND OBJECTS.
 
-        /**Homework by Henry Orlov
-        *B12
-        *12,2017
-         **/
+        /*Game that made as homework by Henry Orlov for java
+        *IVSB12
+        *12 month 2017
+         */
 
-        Scanner rep = new Scanner(System.in);  //Scanner.
-        String PlayerName;      //player nickname or name.
-        String d1, d2, d3, d4;     //strings for decisions.
-        int age;               // int for age.
-        int endage;           // date of death = age + 64. that will be at easter egg ending
-        String line2, line3, line4, line5, line6, line7; //lines listed down.
-        //Lines that will be in game
-        line2 = "REBEL:Good, Die alone! *He open cage and runs away. After some time stormtroopers come and shot you * GAMEOVER";
-        line3 = "REBEL:Nice, at least somebody is friendly here!\n*You both running from the cell.\n*after some time, you start to realize that you on board of Star Destroyer starship";
-        line4 = "*suddenly stormtroopers show up and that guy shots them" + "\nREBEL: okay I can see escape capsules, in this way!";
-        line5 = "You punch him in a face, after he falls you start to beat cr*p out of him \nAfter 2 weeks you was awarded by medal of galactic honor from the hands by great emperor Palpatine \nSince then you live happy with name of great moff ";
-        line6 = "After 64 years you died in glory at age of ";
-        line7 = "*You just shot a lot of stormtroopers to get to the capsules, but rebel got serious injure.\nYou can run away alone or..."; // \n helps sparate text by lines.
+        //ALL OBJECTS LISTED BELOW.
+        Scanner rep = new Scanner(System.in);                //Scanner.
+        String PlayerName;                                   //Nickname or name for player.
+        String decision1, decision2, decision3, decision4;   //Strings for decisions.
+        int age;           // int for age.
+        int deathage;      // date of death = age + 64. that will be at easter egg ending.
+        String sline1, sline2, sline3, sline4, sline5, sline6, sline7, sline8, sline9, sline10, sline11, sline12, sline13, sline14, sline15, sline16, sline17;  //lines for "system" messages.
+        String eline1, eline2, eline3, eline4, eline5, eline6, eline7, eline8, eline9, eline10, eline11, eline12, eline13, eline14, eline15, eline16;           //plot events lines.
+        String rline1, rline2, rline3, rline4, rline5, rline6;    //lines for rebel.
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-           /**
-           *  0 - status for exiting game.
-           *   1 - status for beating the game.
-           *   2 - status for denied access because of small age.
-           *   3 - easter egg ending.
-           **/
+        ///LINES LISTED BELOW.
+        //Lines for system messages.  // \n helps sparate text by lines.
+        sline1 = "WELCOME TO EPIC, NEW, BRAINKILLING, BLOODTHRILLING";
+        sline2 = "ULTIMATE";
+        sline3 = "ONE WAY GAME! V0.3\nSTAR WARS™ UNIVERSE\nBY O.HENRY";
+        sline4 = "DISCLAIMER: Without any microtransactions!";
+        sline5 = "Please enter your age, you know, PEGI n stuff...";
+        sline6 = "You must enter a number";
+        sline7 = "Ok.";
+        sline8 = "Go play minecraft.";
+        sline9 = "INPUT YOUR NAME:";
+        sline10 = "OK, Game starts!";
+        sline11 = "Also, type 'exit' if you want to end this.";
+        sline12 = "Do you want to restart game?(TYPE Y/N)";
+        sline13 = "Ok,Bye";
+        sline14 = "Ok,sad but goodluck!";
+        sline15 = "YOU WON IN STRANGE WAY!!!\nYOU GOT EASTER EGG ENDING!";
+        sline16 = "ONE WAY GAME 2\nCOMING 2018\nPRE ORDER TO GET FREE HAT FOR TEAM FORTRESS 2!";
+        sline17 = "YOU WON!";
 
-        Timer timer1 = new Timer();         //Timer for line to accure.
-        timer1.schedule(new TimerTask() {    //new timer task.
-            public void run() {             // storage code that will run after time.
-                System.out.println("WELCOME TO EPIC, NEW, BRAINKILLING, BLOODTHRILLING");       // First line of whole game.
-            }
-        }, 2000); // after 2 seconds it will be executed.
+        //LINES FOR PLOT EVENTS.
+        eline1 = "\nYou wake up in some weird looking prison cell.\nIt looks like empire finally got you.\nThere is some weirdo rebel standing in front of you...";
+        eline2 = "\nWhat do you do? \nA. Do not pay attention for him.\nB. Follow him.";
+        eline3 = "\n*You both running from the cell.\n*after some time, you start to realize that you on board of Star Destroyer starship";
+        eline4 = "*suddenly stormtroopers show up and that guy shots them ";
+        eline5 = "You punch him in a face, after he falls you start to beat cr*p out of him \nAfter 2 weeks you was awarded by medal of galactic honor from the hands by great emperor Palpatine \nSince then you live happy with name of great moff ";
+        eline6 = "After 64 years you died in glory at age of ";
+        eline7 = "*You just shot a lot of stormtroopers to get to the capsules, but rebel got serious injure.\nYou can run away alone or...";
+        eline8 = "You chosed to stand on place, and after some time you died, GG";
+        eline9 = "What do you want to do?\nA. Ask man about situation.\nB. Do not ask anything.";
+        eline10 = "He rotate his head to your direction and...\n*suddenly stormtroopers show up behind him and kills him because he was looking at your direction\nAfter him they shot you *GAME OVER*";
+        eline11 = "What do you do?\n A.Take gun from dead guards.\n B.Remain without anything.\n C.Try to kill this man in a glory of great galactic empire.";
+        eline12 = "*You take gun from corpse and proceed to escape capsules with rebel";
+        eline13 = "You both running in direction of capsules \n then sudennly more stormtroopers shows up and starting to shoot \n that guy just kills almost all of them but his ammo runs out and last trooper kills both of you *GAME OVER*";
+        eline14 = "What do you do?\n A.Take him.\n B.Left him to die.";
+        eline15 = "You just escaped Star Destroyer with your new friend, now you won, but what about next page of this story?";
+        eline16 = "After you left him and escaped your escape pod EXPLODES because carma you cold hearted tin man!!!*GAME OVER*";
 
+        //LINES FOR REBEL.
+        rline1 = "\nREBEL:Stand up... there you go. You were dreaming.";
+        rline2 = "\nREBEL:Well, not even last night's space storm could wake you.";
+        rline3 = " right? Cmon, lets get the hell out of here.";
+        rline4 = "REBEL:Good, Die alone! *He open cage and runs away. After some time stormtroopers come and shot you * GAMEOVER";
+        rline5 = "REBEL:Nice, at least somebody is friendly here!";
+        rline6 = "\nREBEL: okay I can see escape capsules, in this way!";
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        Timer timer2 = new Timer(); //Timer for line to accure.
-        timer2.schedule(new TimerTask() { //new timer task.
+        ///STATUSES EXPLANATIONS
+           /*
+             0 - status for exiting game.
+              1 - status for beating the game.
+              2 - status for denied access because of small age.
+              3 - easter egg ending.
+           */
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        ///GAME STARTS HERE.
+        //FIRST LINE
+        Timer timer1 = new Timer();            //Timer for line to accure.
+        timer1.schedule(new TimerTask() {      //new timer task.
+            public void run() {                // storage code that will run after time.
+                System.out.println(sline1);    // First line of whole game.
+                              }
+        }, 2000);                       // after 2 seconds it will be executed.
+                                              //ALL NEXT LINES USE SAME SYSTEM.
+        //SECOND LINE.
+        Timer timer2 = new Timer();
+        timer2.schedule(new TimerTask() {
             public void run() {
-                System.out.println("ULTIMATE");
+                System.out.println(sline2);
+                              }
+        }, 5000);
+
+        //THIRD LINE.
+        Timer timer3 = new Timer();
+        timer3.schedule(new TimerTask() {
+            public void run() {
+                System.out.println(sline3);
+                              }
+        }, 7000);
+
+        //FOURTH LINE.
+        Timer timer4 = new Timer();
+        timer4.schedule(new TimerTask() {
+            public void run() {
+                System.out.println(sline4);
             }
-        }, 5000); // after 5 seconds.
+        }, 9000);
 
-
-        Timer timer3 = new Timer(); //Timer for line to accure.
-        timer3.schedule(new TimerTask() { //new time rask.
-            public void run() {    // storage code that will run after time.
-                System.out.println("ONE WAY GAME! V0.2"); //NOW VERSION 0.2!!!11one
-                System.out.println("STAR WARS™ VERSION");
-                System.out.println("BY O.HENRY");
+        //FIFTH LINE.
+        Timer timer5 = new Timer();
+        timer5.schedule(new TimerTask() {
+            public void run() {
+                System.out.println(sline5);
             }
-        }, 7000); // after 7 seconds.
+        }, 11000);
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        Timer timer4 = new Timer();   //Timer for line to accure.
-        timer4.schedule(new TimerTask() {  //new time rask.
-            public void run() {  // storage code that will run after time.
-                System.out.println("DISCLAIMER:Without any microtransactions");
-            }
-        }, 9000); // after 9 seconds.
-
-
-        Timer timer5 = new Timer();  //Timer for line to accure.
-        timer5.schedule(new TimerTask() { //new time rask.
-            public void run() { // storage code that will run after time.
-                System.out.println("Please enter your age, you know, PEGI n stuff...");
-            }
-        }, 11000);  // after 11 seconds.
-
-        while (true)       //LOOP FOR ACCURATE AGE INPUT.
+        ///AGE PART
+        //LOOP FOR ACCURATE AGE INPUT
+        while (true)
         {
             if (!rep.hasNextInt()) {  //if scanner see negative from integer.
                 rep = new Scanner(System.in); //creating new values and deleteng old.
-                System.out.println("You must enter a number");
+                System.out.println(sline6);
 
             } else {  //else
                 age = rep.nextInt();  //age input in int.
                 if (age >= 18) //if age is 18 or more.
                 {
-                    System.out.println("Ok"); //proceed to game.
+                    System.out.println(sline7); //proceed to game.
                 } else {
-                    System.out.println("Go play minecraft.");   //else player must GTFO.
+                    System.out.println(sline7 + sline8);   //else player must GTFO.
                     System.exit(2); //goodbye game. resstricted status
                 }
                 break; //ends loop.
             }
         }
-        endage = (age + 64); //counts age of death that will be showed at the easter egg ending.
 
-        System.out.println("INPUT YOUR NAME");
-        PlayerName = rep.next(); // scanner rep for player name.
+        //DEATHAGE
+        deathage = (age + 64); //counts age of death that will be showed at the easter egg ending.
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        System.out.print("Okay, lets start!");
+        ///PLAYER NICKNAME/NAME PART
+        System.out.println(sline9); //line asking for player name.
+        PlayerName = rep.next();    // scanner rep for player name.
+        System.out.print(sline10);  //line for game start.
 
-        Timer timer6 = new Timer();  //Timer for line to accure.
-        timer6.schedule(new TimerTask() { //new time rask.
-            public void run() { // storage code that will run after time.
-                System.out.print("\nYou wake up in some weird looking prison cell.\nIt looks like empire finally got you.\nThere is some weirdo rebel standing in front of you... ");
+        //FIRST LINE OF THE GAME
+        Timer timer6 = new Timer();
+        timer6.schedule(new TimerTask() {
+            public void run() {
+                System.out.print(eline1);
             }
-        }, 2000); //after 2 seconds.
+        }, 2000);
 
-        Timer timer7 = new Timer(); //Timer for line to accure.
-        timer7.schedule(new TimerTask() { //new time rask.
-            public void run() { // storage code that will run after time.
-                System.out.print("\nREBEL:Stand up... there you go. You were dreaming. ");
-                System.out.print("\nREBEL:Well, not even last night's space storm could wake you. ");
+        //SECOND LINE OF THE GAME
+        Timer timer7 = new Timer();
+        timer7.schedule(new TimerTask() {
+            public void run() {
+                System.out.print(rline1);
+                System.out.print(rline2);
                 System.out.print(PlayerName);  //name in middle of conversation.
-                System.out.println(" right? Cmon, lets get the hell out of here.");
-                System.out.println("\nWhat do you do? \nA. Do not pay attention for him.");
-                System.out.println("B. Follow him.");
-                System.out.println("Also, type 'exit' if you want to end this.");
+                System.out.println(rline3);
+                System.out.println(eline2);
+                System.out.println(sline11);
             }
-        }, 7000); //7 seconds.
+        }, 7000);
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        d1 = rep.next(); //scan next input as case for switch d1.
 
-        switch (d1.toUpperCase()) { //makes anything that we input in upper case.
+        ///FIRST DECISION PART
+        decision1 = rep.next(); //scan next input as case for switch decision1.
+
+        //FIRST SWITCH
+        switch (decision1.toUpperCase()) { //makes anything that we input in upper case.
 
             case "exit": // in case when typed exit.
                 System.exit(0); //status for exiting game.
             break;
 
             case "A":
-                System.out.println(line2); //println line2.
-                System.out.println("Do you want to restart game?(TYPE Y/N)");
+                System.out.println(rline4); //println rline4.
+                System.out.println(sline12);
                 Scanner rep2 = new Scanner(System.in);  //new scanner rep2 holds answer.
                 String input2 = rep2.nextLine();
-                if (input2.toLowerCase().equals("y")) //it makes anything that you input in lower case
-                    main(new String[0]); // jumps at start
+                if (input2.toLowerCase().equals("y")) //it makes anything that you input in lower case.
+                    main(new String[0]); // jumps at start.
                 else {
-                    System.out.println("Ok,Bye");
+                    System.out.println(sline15);
                     System.exit(0); //status for exiting game.
                 }
                 break;
 
             case "B":
-                System.out.println(line3); //println line3
+                System.out.println(rline5 + eline3); //println rline4 + eline3.
                 break;
 
-            default:    //if player type anything except A or B or exit then
-                System.out.println("You chosed to stand on place, and after some time you died, GG");
-                System.out.println(line2); //println line2
-                System.out.println("Do you want to restart game?(TYPE Y/N)");
+            default:    //if player type anything except A or B or exit then.
+                System.out.println(eline8);
+                System.out.println(rline3); //println rline3.
+                System.out.println(sline12);
                 Scanner rep3 = new Scanner(System.in);
                String input3 = rep3.nextLine();
-                if (input3.toLowerCase().equals("y")) //it makes anything that you input in lower case
-                    main(new String[0]); // jumps at start
+                if (input3.toLowerCase().equals("y")) //it makes anything that you input in lower case.
+                    main(new String[0]); // jumps at start.
                 else {
-                    System.out.println("Ok,Bye");
+                    System.out.println(sline12);
                     System.exit(0); //status for exiting game.
                 }
         }
-                System.out.println("What do you want to do?");
-                System.out.println("A. Ask man about situation.");
-                System.out.println("B. Do not ask anything.");
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                d2 = rep.next(); //involves scanner for switch (d2)
-
-                switch (d2.toUpperCase()) { //makes anything that we input in upper case
+        ///SECOND DECISION PART.
+                System.out.println(eline9);
+                decision2 = rep.next(); //involves scanner for switch (decision2).
+        //SECOND SWITCH.
+                switch (decision2.toUpperCase()) { //makes anything that we input in upper case.
 
                     case "exit":
                         System.exit(0); //status for exiting game.
                         break;
                     case "A":
-                        System.out.println(" He rotate his head to your direction and...");
-                        System.out.println(" *suddenly stormtroopers show up behind him and kills him because he was looking at your direction");
-                        System.out.println(" After him they shot you *GAME OVER*");
-                        System.out.println("Do you want to restart game?TYPE Y/N");
+                        System.out.println(eline10);
+                        System.out.println(sline13);
                         Scanner rep4 = new Scanner(System.in);
                         String input4 = rep4.nextLine();
-                        if (input4.toLowerCase().equals("y")) //it makes anything that you input in lower case
-                            main(new String[0]); // jumps at start
+                        if (input4.toLowerCase().equals("y")) //it makes anything that you input in lower case.
+                            main(new String[0]); // jumps at start.
                         else {
-                            System.out.println("Ok,Bye");
+                            System.out.println(sline13);
                             System.exit(0); //status for exiting game.
                              }
                     case "B":
-                        System.out.println(line4);
+                        System.out.println(eline4 + rline6);
                         break;
-                    default:    //if player type anything except A or B or exit then
-                        System.out.println("You chosed to stand on place, and after some time you died, GG");
-                        System.out.println("Do you want to restart game?(TYPE Y/N)");
+                    default:    //if player type anything except A or B or exit then.
+                        System.out.println(eline8);
+                        System.out.println(sline12);
                         Scanner rep5 = new Scanner(System.in);
                         String input5 = rep5.nextLine();
-                        if (input5.toLowerCase().equals("y")) //it makes anything that you input in lower case
-                            main(new String[0]); // jumps at start
+                        if (input5.toLowerCase().equals("y")) //it makes anything that you input in lower case.
+                            main(new String[0]); // jumps at start.
                         else {
-                            System.out.println("Ok,Bye");
+                            System.out.println(sline13);
                             System.exit(0); //status for bad ending.
                              }
 
 
                 }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                System.out.println(" What do you do?\n A.Take gun from dead guards.\n B.Remain without anything.\n C.Try to kill this man in a glory of great galactic empire.");
-
-                d3 = rep.next(); //involves scanner for switch(d3)
-
-                switch (d3.toUpperCase()) { //makes anything that we input in upper case
+        ///THIRD DECISION PART.
+                System.out.println(eline11);
+                decision3 = rep.next(); //involves scanner for switch(decision3).
+        //THIRD SWITCH.
+                switch (decision3.toUpperCase()) { //makes anything that we input in upper case.
                     default:
-                        System.out.println("You chosed to stand on place, and after some time you died, GG");
-                        System.out.println("Do you want to restart game?(TYPE Y/N)");
+                        System.out.println(eline8);
+                        System.out.println(sline12);
                         Scanner rep6 = new Scanner(System.in);
                         String input6 = rep6.nextLine();
-                        if (input6.toLowerCase().equals("y")) //it makes anything that you input in lower case
-                            main(new String[0]); // jumps at start
+                        if (input6.toLowerCase().equals("y")) //it makes anything that you input in lower case.
+                            main(new String[0]); // jumps at start.
                         else {
-                            System.out.println("Ok,Bye");
+                            System.out.println(sline13);
                             System.exit(0); //status for exiting game.
                              }
 
@@ -215,87 +273,85 @@ public class TextGame {
                         break;
 
                     case "A":
-                        System.out.println("*You take gun from corpse and proceed to escape capsules with rebel");
+                        System.out.println(eline12);
                         break;
 
                     case "B":
-                        System.out.println(" You both running in direction of capsules \n then sudennly more stormtroopers shows up and starting to shoot \n that guy just kills almost all of them but his ammo runs out and last trooper kills both of you *GAME OVER*");
-                        System.out.println("Do you want to restart game?(TYPE Y/N)");
+                        System.out.println(eline13);
+                        System.out.println(sline12);
                         Scanner rep8 = new Scanner(System.in);
                         String input8 = rep8.nextLine();
-                        if (input8.toLowerCase().equals("y")) //it makes anything that you input in lower case
-                            main(new String[0]); // jumps at start
+                        if (input8.toLowerCase().equals("y")) //it makes anything that you input in lower case.
+                            main(new String[0]); // jumps at start.
                         else {
-                            System.out.println("Ok,Bye");
+                            System.out.println(sline13);
                             System.exit(0); //status for exiting game.
                              }
 
                     case "C":
-                        System.out.println(line5 + PlayerName);
-                        System.out.println(line6 + endage); //line6 and endage made from your inputed age + 64 years
-                        System.out.println("YOU WON INSTRANGE WAY!!!!");
-                        System.out.println("YOU GOT EASTER EGG ENDING!");
-                        System.out.println("Do you want to take another RUN?(TYPE Y/N)");
+                        System.out.println(eline5 + PlayerName);
+                        System.out.println(eline6 + deathage); //line6 and deathage made from your inputed age + 64 years.
+                        System.out.println(sline15);
+                        System.out.println(sline12);
                         Scanner rep9 = new Scanner(System.in);
                         String input9 = rep9.nextLine();
-                        if (input9.toLowerCase().equals("y")) //it makes anything that you input in lower case
-                            main(new String[0]); // jumps at start
+                        if (input9.toLowerCase().equals("y")) //it makes anything that you input in lower case.
+                            main(new String[0]); // jumps at start.
                         else {
-                            System.out.println("Ok,sad but goodluck!");
-                            System.exit(3); //status for easter ending
+                            System.out.println(sline14);
+                            System.exit(3); //status for easter ending.
                              }
                 }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                System.out.println(line7); //print line 7.
-                System.out.println(" What do you do?\n A.Take him.\n B.Left him to die.");
-
-                d4 = rep.next(); //involves scanner for switch(d4)
-
-                switch (d4.toUpperCase()) { //makes anything that we input in upper case
+        ///FOURTH DECISION PART, AND ENDING.
+                System.out.println(eline7); //print line 7.
+                System.out.println(eline14);
+                decision4 = rep.next(); //involves scanner for switch(decision4).
+        //FOURTH SWICTH. LAST ONE.
+                switch (decision4.toUpperCase()) { //makes anything that we input in upper case.
                     default:
-                        System.out.println("You chosed to stand on place, and after some time you died, GG");
-                        System.out.println("Do you want to restart game?(TYPE Y/N)");
+                        System.out.println(eline8);
+                        System.out.println(sline12);
                         Scanner rep10 = new Scanner(System.in);
                         String input10 = rep10.nextLine();
-                        if (input10.toLowerCase().equals("y")) //it makes anything that you input in lower case
+                        if (input10.toLowerCase().equals("y")) //it makes anything that you input in lower case.
                             main(new String[0]); // jumps at start
+
                         else {
-                            System.out.println("Ok,Bye");
+                            System.out.println(sline13);
                             System.exit(0); //status for exiting game.
-                        }
+                             }
 
                     case "exit":
                         System.exit(0); //status for exiting game.
                         break;
 
                     case "A":
-                        System.out.println("You just escaped Star Destroyer with your new frind, now you won, but what about next page of this story?");
-                        System.out.println("ONE WAY GAME 2");
-                        System.out.println("COMING 2018");
-                        System.out.println("PRE ORDER TO GET FREE HAT FOR TEAM FORTRESS 2!");
-                        System.out.println("Do you want to take another run?(TYPE Y/N)");
+                        System.out.println(eline15);
+                        System.out.println(sline16);
+                        System.out.println(sline12);
                         Scanner rep11 = new Scanner(System.in);
                         String input11 = rep11.nextLine();
-                        if (input11.toLowerCase().equals("y")) //it makes anything that you input in lower case
-                            main(new String[0]); // jumps at start
+                        if (input11.toLowerCase().equals("y")) //it makes anything that you input in lower case.
+                            main(new String[0]); // jumps at start.
                         else {
-                            System.out.println("YOU WON!");
-                            System.exit(1); //status for good ending
-                        }
+                            System.out.println(sline17);
+                            System.exit(1); //status for good ending.
+                             }
+
                     case "B":
-                        System.out.println("After you left him and escaped your escape pod EXPLODES because carma you cold hearted tin man!!!*GAME OVER*");
-                        System.out.println("Do you want to restart game?(TYPE Y/N)");
+                        System.out.println(eline16);
+                        System.out.println(sline12);
                         Scanner rep12 = new Scanner(System.in);
                         String input12 = rep12.nextLine();
-                        if (input12.toLowerCase().equals("y")) //it makes anything that you input in lower case
-                            main(new String[0]); // jumps at start
+                        if (input12.toLowerCase().equals("y")) //it makes anything that you input in lower case.
+                            main(new String[0]); // jumps at start.
+
                         else {
-                            System.out.println("Ok,Bye");
+                            System.out.println(sline13);
                             System.exit(0); //status for exiting game.
-                        }
+                             }
                 }
-
-
-
     }
 }
