@@ -4,6 +4,7 @@ public class TextGame {
         ///INFO OF GAME AND OBJECTS.
 
          /*
+         *VERSION 0.4
          *Game that was made as homework by Henry Orlov for java classes.
          *IVSB12.
          *12 month 2017.
