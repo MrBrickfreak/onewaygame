@@ -3,9 +3,10 @@ public class TextGame {
     public static void main(String[] args) {
         ///INFO OF GAME AND OBJECTS.
 
-        /*Game that made as homework by Henry Orlov for java
-        *IVSB12
-        *12 month 2017
+        /*
+           Game that made as homework by Henry Orlov for java.
+           IVSB12.
+           12 month 2017.
          */
 
         //ALL OBJECTS LISTED BELOW.
@@ -66,17 +67,17 @@ public class TextGame {
         rline6 = "\nREBEL: okay I can see escape capsules, in this way!";
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        ///STATUSES EXPLANATIONS
+        ///STATUSES EXPLANATIONS.
            /*
              0 - status for exiting game.
-              1 - status for beating the game.
-              2 - status for denied access because of small age.
-              3 - easter egg ending.
+             1 - status for beating the game.
+             2 - status for denied access because of small age.
+             3 - easter egg ending.
            */
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         ///GAME STARTS HERE.
-        //FIRST LINE
+        //FIRST LINE.
         Timer timer1 = new Timer();            //Timer for line to accure.
         timer1.schedule(new TimerTask() {      //new timer task.
             public void run() {                // storage code that will run after time.
@@ -117,8 +118,8 @@ public class TextGame {
         }, 11000);
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        ///AGE PART
-        //LOOP FOR ACCURATE AGE INPUT
+        ///AGE PART.
+        //LOOP FOR ACCURATE AGE INPUT.
         while (true)
         {
             if (!rep.hasNextInt()) {  //if scanner see negative from integer.
@@ -138,16 +139,16 @@ public class TextGame {
             }
         }
 
-        //DEATHAGE
+        //DEATHAGE.
         deathage = (age + 64); //counts age of death that will be showed at the easter egg ending.
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        ///PLAYER NICKNAME/NAME PART
+        ///PLAYER NICKNAME OR NAME PART.
         System.out.println(sline9); //line asking for player name.
         PlayerName = rep.next();    // scanner rep for player name.
         System.out.print(sline10);  //line for game start.
 
-        //FIRST LINE OF THE GAME
+        //FIRST LINE OF THE GAME.
         Timer timer6 = new Timer();
         timer6.schedule(new TimerTask() {
             public void run() {
@@ -155,7 +156,7 @@ public class TextGame {
             }
         }, 2000);
 
-        //SECOND LINE OF THE GAME
+        //SECOND LINE OF THE GAME.
         Timer timer7 = new Timer();
         timer7.schedule(new TimerTask() {
             public void run() {
@@ -170,10 +171,10 @@ public class TextGame {
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-        ///FIRST DECISION PART
+        ///FIRST DECISION PART.
         decision1 = rep.next(); //scan next input as case for switch decision1.
 
-        //FIRST SWITCH
+        //FIRST SWITCH.
         switch (decision1.toUpperCase()) { //makes anything that we input in upper case.
 
             case "exit": // in case when typed exit.
