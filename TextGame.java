@@ -4,7 +4,7 @@ public class TextGame {
         ///INFO OF GAME AND OBJECTS.
 
          /*
-         *VERSION 0.4
+         *VERSION 0.5
          *Game that was made as homework by Henry Orlov for java classes.
          *IVSB12.
          *12 month 2017.
@@ -25,7 +25,7 @@ public class TextGame {
         //Lines for system messages. \n helps sparate text by lines.
         sline1 = "WELCOME TO EPIC, NEW, BRAINKILLING, BLOODTHRILLING";
         sline2 = "ULTIMATE";
-        sline3 = "ONE WAY GAME! V0.4\nSTAR WARS™ UNIVERSE\nBY O.HENRY";
+        sline3 = "ONE WAY GAME! V0.5\nSTAR WARS™ UNIVERSE\nBY O.HENRY";
         sline4 = "DISCLAIMER: Without any microtransactions!";
         sline5 = "Please enter your age, you know, PEGI n stuff...";
         sline6 = "You must enter a number";
@@ -133,7 +133,7 @@ public class TextGame {
                     System.out.println(sline7); //Proceed to game.
                 } else {                        //else...
                     System.out.println(sline7 + sline8);   //Else player must GTFO.
-                    System.exit(2); //Goodbye game. Resstricted status.
+                    System.exit(2); //Goodbye game. Restricted status.
                 }
                 break; //ends loop.
             }
@@ -225,7 +225,7 @@ public class TextGame {
 
                     case "A":
                         System.out.println(eline10);
-                        System.out.println(sline13);
+                        System.out.println(sline12);
                         Scanner rep4 = new Scanner(System.in);
                         String input4 = rep4.nextLine();
                         if (input4.toLowerCase().equals("y")) //This line makes anything that you input in lower case, and comapres to "y".
